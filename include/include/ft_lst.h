@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 18:51:11 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/08/29 17:39:06 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/08/31 13:01:13 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 int		ft_lstsize(t_list *lst);
 
 #endif
-
