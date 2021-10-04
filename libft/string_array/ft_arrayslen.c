@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   ft_arrayslen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 10:14:20 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/09/29 18:26:59 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/08/01 22:26:59 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/09/29 12:52:01 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "ft_string_array.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+size_t	ft_arrayslen(char **array)
 {
-	if (push(stack_a, stack_b))
-		return ;
-	ft_putstr("pa\n");
-}
+	size_t	len;
 
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	if (push(stack_b, stack_a))
-		return ;
-	ft_putstr("pb\n");
+	len = 0;
+	while (*array)
+	{
+		len += ft_strlen(*array);
+		array++;
+	}
+	return (len);
 }

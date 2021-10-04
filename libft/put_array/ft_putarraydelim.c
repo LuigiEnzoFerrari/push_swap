@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   ft_putarraydelim.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 10:14:20 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/09/29 18:26:59 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/08/01 22:27:19 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/09/29 10:03:47 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "ft_put_array.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	ft_putarraydelim(char **array, int c)
 {
-	if (push(stack_a, stack_b))
-		return ;
-	ft_putstr("pa\n");
-}
-
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	if (push(stack_b, stack_a))
-		return ;
-	ft_putstr("pb\n");
+	while (*array)
+	{
+		ft_putstr(*array++);
+		ft_putchar(c);
+	}
 }
