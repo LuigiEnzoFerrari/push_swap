@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:01 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/08/31 11:41:50 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:01:56 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ int	push(t_node **dst, t_node **src)
 {
 	t_node	*node;
 
-	if ((*src) == NULL)
-		return (-1);
 	node = (*src);
 	(*src) = (*src)->next;
 	node->next = (*dst);

@@ -4,3 +4,5 @@ LICENSE
 test/
 *.o
 *.pdf
+script.sh
+

@@ -1,0 +1,112 @@
+merge_power(n)
+	for i = 0; i < n; i++
+		if stack_a < stack_b
+			pb
+		rb
+
+	for i = 0; i < n; i++
+		if stack_a < stack_b
+			pb
+		rb
+
+	merge_power(n^2)
+
+function
+
+	Middle_stack = floor(len(stack_a) / 2)
+
+	minor = find_minor__element(stack_a)
+	for (i = 0; Middle_stack > i; i++)
+		if (stack_a[0] == minor)
+			ra(stack_a)
+		pb(stack_a, stack_b)
+
+	i = 0
+	while (Middle_stack > i)
+		if (stack_a[0] == minor)
+			ra
+		else if (stack_a[1] == minor)
+			sa
+			ra
+		if stack_a[0] > stack_a[1]
+			stack_b[0] > stack_b[1]
+				ss(stack_a, stack_b)
+			sa
+		2 rr
+		i += 2
+
+	merge_power(stack_a, stack_b, 4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	int	teN(t_node **stack_a, t_node **stack_b)
+{
+	if (lstLen((*stack_b)) < 2)
+	{
+		if ((*stack_a)->data < (*stack_a)->next->data)
+		{
+			pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
+		}
+		else
+		{
+			sa(stack_a);
+			pb(stack_a, stack_b);
+			pb(stack_a, stack_b);
+		}
+	}
+	if (((*stack_a)->data > nodeLast((*stack_a))->data)
+	|| ((*stack_a)->data > (*stack_a)->next->data))
+	{
+		if ((*stack_a)->data > nodeLast((*stack_a))->data)
+		{
+			if ((*stack_b)->data > nodeLast((*stack_b))->data)
+				rra(stack_a);
+			else
+				rrr(stack_a, stack_b);
+		}
+		if ((*stack_a)->data > (*stack_a)->next->data)
+		{
+			if ((*stack_b)->data > (*stack_b)->next->data)
+				sa(stack_a);
+			else
+				ss(stack_a, stack_b);
+		}
+	}
+	else if ((*stack_a)->next->data > (*stack_a)->next->next->data)
+	{
+		if ((*stack_b)->data < (*stack_b)->next->data)
+			rr(stack_a, stack_b);
+		else
+			ra(stack_a);
+	}
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	if (lstLen((*stack_a)) < 2)
+		return (0);
+	teN(stack_a, stack_b);
+	return (0);
+}

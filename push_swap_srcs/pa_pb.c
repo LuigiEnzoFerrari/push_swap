@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 10:14:20 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/09/29 18:26:59 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:43:21 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {
-	if (push(stack_a, stack_b))
+	if ((*stack_b) == NULL)
 		return ;
+	push(stack_a, stack_b);
 	ft_putstr("pa\n");
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
 {
-	if (push(stack_b, stack_a))
+	if ((*stack_a) == NULL)
 		return ;
+	push(stack_b, stack_a);
 	ft_putstr("pb\n");
 }

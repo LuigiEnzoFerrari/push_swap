@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 12:10:09 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/09/29 18:27:17 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/10/06 10:05:55 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 		return ;
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_putstr("rrr ");
+	ft_putstr("rrr\n");
 }

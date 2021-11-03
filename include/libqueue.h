@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 12:59:51 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/08/31 12:59:52 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/10/15 12:46:50 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct s_node	t_node;
 t_node	*newNode(int data);
 t_node	*nodeLast(t_node *lst);
 
+size_t	lstSize(t_node *lst);
+
+
 void	insertFront(t_node **lst, int data);
 void	insertEnd(t_node **lst, int data);
 
@@ -41,6 +44,6 @@ void	nodeFree(t_node *lst);
 void	lstDelete(t_node **lst);
 void	nodeDelete(t_node **lst);
 
-void	lstPrint(t_node *lst);
+void	lstPrint(t_node *lst, int c);
 
 #endif

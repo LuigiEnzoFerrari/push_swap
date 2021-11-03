@@ -6,12 +6,25 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/10/02 23:03:01 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/03 03:23:41 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <sys/queue.h>
+
+size_t	lstLen(t_node *lst)
+{
+	size_t	i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
 
 int	print_error(int n)
 {
@@ -34,6 +47,50 @@ int	print_error(int n)
 	return (EXIT_FAILURE);
 }
 
+
+int quintuple(t_node **stack_a, t_node **stack_b)
+{
+	int	lower;
+	
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	trinity(stack_a);
+	if ((*stack_b)->data > (*stack_b)->next->data)
+		sb(stack_b);
+	lower = (*stack_a)->data;
+	if ((*stack_a)->data > (*stack_b)->data)
+		lower = (*stack_b)->data;
+	while (lstLen(*stack_b))
+	{
+		if ((*stack_a)->data < (*stack_b)->data)
+			ra(stack_a);
+		else
+			pa(stack_a, stack_b);
+	}
+	while ((*stack_a)->data != lower)
+		ra(stack_a);
+	return (0);
+}
+
+int	algorithms_init(t_node **stack_a, t_node **stack_b)
+{
+	size_t	n;
+
+	n = lstLen(*stack_a);
+	if (n == 3)
+		trinity(stack_a);
+	if (n == 5)
+		quintuple(stack_a,stack_b);
+	infinity(stack_a, stack_b);
+	ft_putnbr_fd(lstSize(*stack_a), 1);
+	ft_putendl_fd("A:", 1); lstPrint((*stack_a), ' ');
+	ft_putnbr_fd(lstSize(*stack_b), 1);
+	ft_putendl_fd("B:", 1); lstPrint((*stack_b), ' ');
+	lstDelete(stack_a);
+	lstDelete(stack_b);
+	return(1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -47,21 +104,7 @@ int	main(int argc, char **argv)
 		return (print_error(6));
 	if (init_stack_a(&stack_a, argv))
 		return (print_error(6));
-
-	ra(&stack_a);
-	ra(&stack_a);
-	pb(&stack_a, &stack_b);
-	rra(&stack_a);
-	rra(&stack_a);
-	pb(&stack_a, &stack_b);
-	rra(&stack_a);
-	pa(&stack_a, &stack_b);
-	pa(&stack_a, &stack_b);
-	// ft_putendl_fd("a:", 1);
-	// lstPrint(stack_a);
-	// lstPrint(stack_b);
-	lstDelete(&stack_a);
-	lstDelete(&stack_b);
-
+	lstPrint(stack_a, ' ');
+	algorithms_init(&stack_a, &stack_b);
 	return (0);
 }
