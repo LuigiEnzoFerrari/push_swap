@@ -6,25 +6,12 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/03 03:23:41 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/03 20:00:15 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <sys/queue.h>
-
-size_t	lstLen(t_node *lst)
-{
-	size_t	i;
-
-	i = 0;
-	while (lst != NULL)
-	{
-		lst = lst->next;
-		i++;
-	}
-	return (i);
-}
 
 int	print_error(int n)
 {
@@ -47,7 +34,6 @@ int	print_error(int n)
 	return (EXIT_FAILURE);
 }
 
-
 int quintuple(t_node **stack_a, t_node **stack_b)
 {
 	int	lower;
@@ -60,7 +46,7 @@ int quintuple(t_node **stack_a, t_node **stack_b)
 	lower = (*stack_a)->data;
 	if ((*stack_a)->data > (*stack_b)->data)
 		lower = (*stack_b)->data;
-	while (lstLen(*stack_b))
+	while (lstSize(*stack_b))
 	{
 		if ((*stack_a)->data < (*stack_b)->data)
 			ra(stack_a);
@@ -76,7 +62,7 @@ int	algorithms_init(t_node **stack_a, t_node **stack_b)
 {
 	size_t	n;
 
-	n = lstLen(*stack_a);
+	n = lstSize(*stack_a);
 	if (n == 3)
 		trinity(stack_a);
 	if (n == 5)

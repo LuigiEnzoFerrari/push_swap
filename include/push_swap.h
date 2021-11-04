@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/10/15 13:39:11 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/03 17:13:40 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
 
-int	print_error(int n);
-int checker_args(char ***argv);
-int	init_stack_a(t_node **stack_a, char **argv);
+int		print_error(int n);
+int		checker_args(char ***argv);
+int		init_stack_a(t_node **stack_a, char **argv);
 
-int	trinity(t_node **stack_a);
-int infinity(t_node **stack_a, t_node **stack_b);
+int		trinity(t_node **stack_a);
+int		infinity(t_node **stack_a, t_node **stack_b);
+t_node	*bubblesort(t_node *lst);
 
 #endif
