@@ -10,7 +10,7 @@ LINK_LIB := -L libft -L libqueue -lft -lqueue
 
 SRCS_PUSH_SW = main.c push_swap_rotate.c pa_pb.c sa_sb_ss.c \
 		ra_rb_rr.c rra_rrb_rrr.c check_args.c init_stack_a.c \
-		trinity.c infinity.c bubblesort.c
+		trinity.c infinity.c bubblesort.c insert_all_to_stack_a.c \
 
 PATH_PUSH_SW = $(addprefix push_swap_srcs/, $(SRCS_PUSH_SW))
 SRCS_CHECKER = checker_srcs/main.c
