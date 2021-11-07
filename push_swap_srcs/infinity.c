@@ -14,26 +14,13 @@ t_node	*nodeMin(t_node *lst)
 	return (ptr);
 }
 
-t_node	*lstCpy(t_node *lst)
-{
-	t_node	*cpy;
-
-	cpy = NULL;
-	while (lst)
-	{
-		insertEnd(&cpy, lst->data);
-		lst = lst->next;
-	}
-	return (cpy);
-}
-
 int		where_to_put(t_node *stack_a, int value)
 {
 	t_node	*cpy;
 	int		min;
 	int		data;
 
-	cpy = lstCpy(stack_a);
+	cpy = lstDuplicate(stack_a);
 	min = nodeMin(stack_a)->data;
 	while (cpy->data != min)
 		reverse_rotate(&cpy);
