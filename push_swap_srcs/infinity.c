@@ -1,18 +1,5 @@
 #include <push_swap.h>
 
-t_node	*nodeMin(t_node *lst)
-{
-	t_node	*ptr;
-
-	ptr = lst;
-	while (lst != NULL)
-	{
-		if (lst->data < ptr->data)
-			ptr = lst;
-		lst = lst->next;
-	}
-	return (ptr);
-}
 
 int		where_to_put(t_node *stack_a, int value)
 {
