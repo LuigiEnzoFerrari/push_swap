@@ -24,7 +24,7 @@ int	find_the_100nth(t_node *stack_a)
 /*
 ** return 1 if the list still have a number smaller or equal the pivot o otherwise.
 */
-int	has_numbers_left(t_node *stack, int pivot)
+static int	has_numbers_left(t_node *stack, int pivot)
 {
 	while (stack!= NULL)
 	{
@@ -64,7 +64,7 @@ int	has_numbers_left(t_node *stack, int pivot)
 /*
 ** Rotates the stack until a number smaller or equal the pivot are on top
 */
-int	put_the_next_on_top(t_node **stack_a, int pivot)
+static int	put_the_next_on_top(t_node **stack_a, int pivot)
 {
 	while ((*stack_a)->data > pivot)
 		ra(stack_a);
@@ -112,8 +112,6 @@ int	send_all_to_stack_b(t_node **stack_a, t_node **stack_b)
 	while (one_hundreds--)
 	{
 		pivot = find_the_100nth((*stack_a));
-		ft_putstr("pivot");
-		ft_putnbr(pivot);
 		send_chunks_of_one_hundred(stack_a, stack_b, pivot);
 	}
 	return (0);

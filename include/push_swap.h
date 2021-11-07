@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/06 02:36:30 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/07 04:17:00 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		init_stack_a(t_node **stack_a, char **argv);
 int		trinity(t_node **stack_a);
 int		infinity(t_node **stack_a, t_node **stack_b);
 t_node	*bubblesort(t_node *lst);
+t_node	*bubblesort_reverse(t_node *lst);
 int		send_all_to_stack_b(t_node **stack_a, t_node **stack_b);
 
 #endif
