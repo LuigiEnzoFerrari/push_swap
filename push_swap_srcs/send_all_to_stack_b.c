@@ -35,35 +35,10 @@ static int	has_numbers_left(t_node *stack, int pivot)
 	return (0);
 }
 
-// int	nearst_direction(t_node *stack, int pivot)
-// {
-// 	size_t	i;
-// 	size_t	j;
-
-// 	i = 0;
-// 	j = 0;
-// 	while (stack != NULL)
-// 	{
-// 		if (stack->data <= pivot)
-// 			break ;
-// 		stack = stack->next;
-// 		i++;
-// 	}
-// 	while (stack != NULL)
-// 	{
-// 		if (stack->data <= pivot)
-// 			j = 0;
-// 		stack = stack->next;
-// 		j++;
-// 	}
-// 	if (i <= j)
-// 		return (i);
-// 	return (-j);
-// }
-
 /*
 ** Rotates the stack until a number smaller or equal the pivot are on top
 */
+
 static int	put_the_next_on_top(t_node **stack_a, int pivot)
 {
 	while ((*stack_a)->data > pivot)
@@ -85,19 +60,6 @@ int	send_chunks_of_one_hundred(t_node **stack_a, t_node **stack_b, int pivot)
 	return (0);
 }
 
-size_t	how_many_one_hundreds(int size)
-{
-	size_t	i;
-
-	i = 0;
-	while (size > 0)
-	{
-		i++;
-		size -= 100;
-	}
-	return (i);
-}
-
 /*
 ** Divides the stack_a on chuncks of one hundred 
 ** and send all except the 2 largest values from stack_a to stack_b
@@ -108,7 +70,7 @@ int	send_all_to_stack_b(t_node **stack_a, t_node **stack_b)
 	size_t	one_hundreds;
 	int		pivot;
 
-	one_hundreds = how_many_one_hundreds(lstSize((*stack_a)));
+	one_hundreds = how_many_sets_of_x(lstSize((*stack_a)), 100);
 	while (one_hundreds--)
 	{
 		pivot = find_the_100nth((*stack_a));

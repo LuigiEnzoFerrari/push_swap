@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/07 04:17:00 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/08 08:11:33 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ int		infinity(t_node **stack_a, t_node **stack_b);
 t_node	*bubblesort(t_node *lst);
 t_node	*bubblesort_reverse(t_node *lst);
 int		send_all_to_stack_b(t_node **stack_a, t_node **stack_b);
+size_t	how_many_sets_of_x(int size, int x);
+int	nearest_pivot(t_node *stack, int pivot);
+int	nearest_pivot_or_above(t_node *stack, int pivot);
 
 #endif

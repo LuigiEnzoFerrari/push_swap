@@ -7,7 +7,6 @@ int	trinity(t_node **stack_a)
 	args[0] = (*stack_a)->data;
 	args[1] = (*stack_a)->next->data;
 	args[2] = (*stack_a)->next->next->data;
-
 	if ((args[0] > args[1]) && (args[0] > args[2]))
 	{
 		if (args[1] > args[2])

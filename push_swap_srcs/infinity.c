@@ -1,7 +1,6 @@
 #include <push_swap.h>
 
-
-int		where_to_put(t_node *stack_a, int value)
+int		value_to_put_on_top(t_node *stack_a, int value)
 {
 	t_node	*cpy;
 	int		min;
@@ -18,62 +17,13 @@ int		where_to_put(t_node *stack_a, int value)
 	return (data);
 }
 
-int	nearst_direction(t_node *stack, int pivot)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (stack->data != pivot)
-	{
-		stack = stack->next;
-		i++;
-	}
-	while (stack != NULL)
-	{
-		stack = stack->next;
-		j++;
-	}
-	if (i <= j)
-		return (i);
-	return (-j);
-}
-
-
-int	nearst_direction_two(t_node *stack, int pivot)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (stack != NULL)
-	{
-		if (stack->data >= pivot)
-			break ;
-		stack = stack->next;
-		i++;
-	}
-	while (stack != NULL)
-	{
-		if (stack->data >= pivot)
-			j = 0;
-		stack = stack->next;
-		j++;
-	}
-	if (i <= j)
-		return (i);
-	return (-j);
-}
-
 void	preparing_stack_a(t_node **stack_a, t_node **stack_b)
 {
 	int	top_value;
 	int	direction;
 
-	top_value = where_to_put((*stack_a), (*stack_b)->data);
-	direction = nearst_direction((*stack_a), top_value);
+	top_value = value_to_put_on_top((*stack_a), (*stack_b)->data);
+	direction = nearest_pivot((*stack_a), top_value);
 	if (direction > 0)
 		while ((*stack_a)->data != top_value)
 			ra(stack_a);
@@ -117,7 +67,7 @@ static int	put_the_next_on_top(t_node **stack_b, int pivot)
 	void	(*rotating)(t_node **);
 	int		direction;
 
-	direction = nearst_direction_two((*stack_b), pivot);
+	direction = nearest_pivot_or_above((*stack_b), pivot);
 	if (direction > 0)
 		rotating = &rb;
 	else
@@ -138,7 +88,6 @@ static int	has_numbers_left(t_node *stack, int pivot)
 	return (0);
 }
 
-
 void	send_chunks_of_20(t_node **stack_a, t_node **stack_b)
 {
 	int	x;
@@ -155,7 +104,7 @@ void	send_chunks_of_20(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-size_t	how_many_one_twenty(int size)
+size_t	how_many_sets_of_x(int size, int x)
 {
 	size_t	i;
 
@@ -163,7 +112,7 @@ size_t	how_many_one_twenty(int size)
 	while (size > 0)
 	{
 		i++;
-		size -= 20;
+		size -= x;
 	}
 	return (i);
 }
@@ -174,7 +123,7 @@ void	insert_all_to_stack_a(t_node **stack_a, t_node **stack_b)
 	int		min;
 
 	send_remainder(stack_a, stack_b);
-	twentys = how_many_one_twenty(lstSize((*stack_b)));
+	twentys = how_many_sets_of_x(lstSize((*stack_b)), 20);
 	while (twentys--)
 		send_chunks_of_20(stack_a, stack_b);
 	min = nodeMin((*stack_a))->data;

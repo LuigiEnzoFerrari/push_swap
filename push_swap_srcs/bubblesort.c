@@ -1,18 +1,5 @@
 #include <push_swap.h>
 
-t_node	*lstDuplicate(t_node *lst)
-{
-	t_node	*cpy;
-
-	cpy = NULL;
-	while (lst != NULL)
-	{
-		insertEnd(&cpy, lst->data);
-		lst = lst->next;
-	}
-	return (cpy);
-}
-
 void	swap_values(int *n1, int *n2)
 {
 	int	temp;
