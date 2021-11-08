@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/03 20:00:15 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/07 15:57:32 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int quintuple(t_node **stack_a, t_node **stack_b)
 	lower = (*stack_a)->data;
 	if ((*stack_a)->data > (*stack_b)->data)
 		lower = (*stack_b)->data;
-	while (lstSize(*stack_b))
+	while ((*stack_b) != NULL)
 	{
 		if ((*stack_a)->data < (*stack_b)->data)
 			ra(stack_a);

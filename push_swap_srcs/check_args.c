@@ -5,6 +5,10 @@ static int has_more_dig_than_int(char *n)
 	size_t	len;
 
 	len = ft_strlen(n);
+	ft_putnbr(len);
+	ft_putnbr(len);
+	ft_putnbr(len);
+	ft_putnbr(len);
 	if (*n == '-' && len > 11)
 		return (-1);
 	else if (len > 10)
@@ -15,10 +19,13 @@ static int has_more_dig_than_int(char *n)
 static int is_all_int(char **argv)
 {
 	size_t	i;
-	while (*argv)
+
+	while (*argv != NULL)
 	{
 		i = 0;
-		while (*((*argv) + i))
+		if (**argv == '-')
+			i++;
+		while (*((*argv) + i) != '\0')
 		{
 			if (!ft_isdigit(*((*argv) + i)))
 				return (print_error(2));
