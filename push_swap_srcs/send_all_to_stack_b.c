@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   send_all_to_stack_b.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 10:22:59 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/08 10:23:00 by lenzo-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 /*
@@ -21,12 +33,15 @@ int	find_the_100nth(t_node *stack_a)
 	lstFree(ptr);
 	return (data);
 }
+
 /*
-** return 1 if the list still have a number smaller or equal the pivot o otherwise.
+** return 1 if the list still have a number smaller or equal the pivot
+** 0 otherwise.
 */
+
 static int	has_numbers_left(t_node *stack, int pivot)
 {
-	while (stack!= NULL)
+	while (stack != NULL)
 	{
 		if (stack->data <= pivot)
 			return (1);
@@ -47,7 +62,8 @@ static int	put_the_next_on_top(t_node **stack_a, int pivot)
 }
 
 /*
-** Send chuncks of one hundred numbers less or equal the pivot from stack_a to stack_b.
+** Send chuncks of one hundred numbers less or equal the pivot
+** from stack_a to stack_b.
 */
 
 int	send_chunks_of_one_hundred(t_node **stack_a, t_node **stack_b, int pivot)

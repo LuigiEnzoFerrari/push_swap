@@ -1,14 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 10:23:25 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/08 10:23:26 by lenzo-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
-static int has_more_dig_than_int(char *n)
+static int	has_more_dig_than_int(char *n)
 {
 	size_t	len;
 
 	len = ft_strlen(n);
-	ft_putnbr(len);
-	ft_putnbr(len);
-	ft_putnbr(len);
-	ft_putnbr(len);
 	if (*n == '-' && len > 11)
 		return (-1);
 	else if (len > 10)
@@ -16,7 +24,7 @@ static int has_more_dig_than_int(char *n)
 	return (0);
 }
 
-static int is_all_int(char **argv)
+static int	is_all_int(char **argv)
 {
 	size_t	i;
 
@@ -38,7 +46,7 @@ static int is_all_int(char **argv)
 	return (0);
 }
 
-static int is_replicated(char **argv)
+static int	is_replicated(char **argv)
 {
 	size_t	i;
 	size_t	j;
@@ -58,7 +66,7 @@ static int is_replicated(char **argv)
 	return (0);
 }
 
-int checker_args(char ***argv)
+int	checker_args(char ***argv)
 {
 	int	one_arg;
 

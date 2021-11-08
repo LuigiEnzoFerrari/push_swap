@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_stack_a.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/08 09:50:01 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/08 09:56:51 by lenzo-pe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <push_swap.h>
 
 static int64_t	ft_atoll(const char *nptr)
 {
 	int64_t	holder;
-	int	sign;
+	int		sign;
 
 	sign = 1;
 	holder = 0;
@@ -20,7 +32,7 @@ static int64_t	ft_atoll(const char *nptr)
 	return (holder * sign);
 }
 
-static int is_max_min_of_a_int(int64_t max)
+static int	is_max_min_of_a_int(int64_t max)
 {
 	if (max > INT_MAX || max < INT_MIN)
 		return (-1);

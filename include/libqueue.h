@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 12:59:51 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/07 15:48:00 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/08 10:10:22 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_node	*nodeLast(t_node *lst);
 
 size_t	lstSize(t_node *lst);
 
-
 void	insertFront(t_node **lst, int data);
 void	insertEnd(t_node **lst, int data);
 
@@ -48,6 +47,5 @@ t_node	*lstDuplicate(t_node *lst);
 void	lstPrint(t_node *lst, int c);
 t_node	*nodeMin(t_node *lst);
 t_node	*nodeMax(t_node *lst);
-
 
 #endif

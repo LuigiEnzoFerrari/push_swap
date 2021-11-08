@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/07 15:57:32 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/08 10:27:54 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int	print_error(int n)
 	return (EXIT_FAILURE);
 }
 
-int quintuple(t_node **stack_a, t_node **stack_b)
+int	quintuple(t_node **stack_a, t_node **stack_b)
 {
 	int	lower;
-	
+
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
 	trinity(stack_a);
@@ -58,23 +58,19 @@ int quintuple(t_node **stack_a, t_node **stack_b)
 	return (0);
 }
 
-int	algorithms_init(t_node **stack_a, t_node **stack_b)
+void	algorithms_init(t_node **stack_a, t_node **stack_b)
 {
 	size_t	n;
 
 	n = lstSize(*stack_a);
 	if (n == 3)
 		trinity(stack_a);
-	if (n == 5)
-		quintuple(stack_a,stack_b);
-	infinity(stack_a, stack_b);
-	ft_putnbr_fd(lstSize(*stack_a), 1);
-	ft_putendl_fd("A:", 1); lstPrint((*stack_a), ' ');
-	ft_putnbr_fd(lstSize(*stack_b), 1);
-	ft_putendl_fd("B:", 1); lstPrint((*stack_b), ' ');
+	else if (n == 5)
+		quintuple(stack_a, stack_b);
+	else
+		infinity(stack_a, stack_b);
 	lstDelete(stack_a);
 	lstDelete(stack_b);
-	return(1);
 }
 
 int	main(int argc, char **argv)
@@ -90,7 +86,6 @@ int	main(int argc, char **argv)
 		return (print_error(6));
 	if (init_stack_a(&stack_a, argv))
 		return (print_error(6));
-	lstPrint(stack_a, ' ');
 	algorithms_init(&stack_a, &stack_b);
 	return (0);
 }
