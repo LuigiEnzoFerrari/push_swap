@@ -21,14 +21,22 @@ SRCS_LIBS = libft/libft.a libqueue/libqueue.a
 
 INC = include
 
+LIBS = libft/ libqueue/
+
 all: $(PUSH_SW_NAME)
+
 
 $(PUSH_SW_NAME): $(PATH_PUSH_SW) $(SRCS_LIBS)
 	$(CC) $(CFLAGS) $(SANIT) $(PATH_PUSH_SW) $(LINK_LIB) -o $@ -I $(INC)
 
-$(SRCS_LIBS):
+
+
+$(SRCS_LIBS): $(LIBS)
 	make -C libft
 	make -C libqueue
+
+$(LIBS):
+	git clone https://github.com/LuigiEnzoFerrari/libqueue.git libqueue
 
 clean:
 	$(RM) $(PUSH_SW_NAME)
