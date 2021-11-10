@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:23:02 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:03:35 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/09 09:27:10 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,14 @@ size_t	how_many_sets_of_x(int size, int x)
 
 void	insert_remainder_of_20(t_node **stack_a, t_node **stack_b)
 {
-	int	remainder;
+	int		remainder;
+	int		pivot;
 
 	remainder = lstSize((*stack_b)) % 20;
+	pivot = find_the_xth((*stack_b), remainder);
 	while (remainder--)
 	{
+		put_the_next_on_top(stack_b, pivot);
 		preparing_stack_a(stack_a, stack_b);
 		pa(stack_a, stack_b);
 	}

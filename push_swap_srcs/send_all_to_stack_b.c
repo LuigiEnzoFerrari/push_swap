@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:22:59 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:23:00 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/09 09:30:47 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	has_numbers_left(t_node *stack, int pivot)
 ** Rotates the stack until a number smaller or equal the pivot are on top
 */
 
-static int	put_the_next_on_top(t_node **stack_a, int pivot)
+static int	put_the_next_on_top_a(t_node **stack_a, int pivot)
 {
 	while ((*stack_a)->data > pivot)
 		ra(stack_a);
@@ -70,7 +70,7 @@ int	send_chunks_of_one_hundred(t_node **stack_a, t_node **stack_b, int pivot)
 {
 	while (has_numbers_left((*stack_a), pivot))
 	{
-		put_the_next_on_top(stack_a, pivot);
+		put_the_next_on_top_a(stack_a, pivot);
 		pb(stack_a, stack_b);
 	}
 	return (0);
@@ -83,11 +83,9 @@ int	send_chunks_of_one_hundred(t_node **stack_a, t_node **stack_b, int pivot)
 
 int	send_all_to_stack_b(t_node **stack_a, t_node **stack_b)
 {
-	size_t	one_hundreds;
 	int		pivot;
 
-	one_hundreds = how_many_sets_of_x(lstSize((*stack_a)), 100);
-	while (one_hundreds--)
+	while (lstSize(*stack_a) > 2)
 	{
 		pivot = find_the_100nth((*stack_a));
 		send_chunks_of_one_hundred(stack_a, stack_b, pivot);

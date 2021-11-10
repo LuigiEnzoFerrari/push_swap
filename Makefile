@@ -14,7 +14,9 @@ SRCS_PUSH_SW = main.c push_swap_rotate.c pa_pb.c sa_sb_ss.c \
 		nearest_value.c insert_all_to_stack_a.c insert_all_to_stack_a_utils.c \
 
 PATH_PUSH_SW = $(addprefix push_swap_srcs/, $(SRCS_PUSH_SW))
-SRCS_CHECKER = checker_srcs/main.c
+SRCS_CHECKER = main.c
+SRCS_CHECKER = $(addprefix push_swap_srcs/, $(SRCS_CHECKER))
+
 SRCS_LIBS = libft/libft.a libqueue/libqueue.a
 
 INC = include
