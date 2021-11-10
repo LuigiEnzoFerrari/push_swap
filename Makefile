@@ -36,6 +36,7 @@ $(SRCS_LIBS): $(LIBS)
 	make -C libqueue
 
 $(LIBS):
+	git clone https://github.com/LuigiEnzoFerrari/42School_Libft.git libft
 	git clone https://github.com/LuigiEnzoFerrari/libqueue.git libqueue
 
 clean:
