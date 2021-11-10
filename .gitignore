@@ -3,6 +3,8 @@ checker
 LICENSE
 test/
 *.o
+*.a
+*.sh
 *.pdf
 script.sh
 .vscode

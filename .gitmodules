@@ -1,0 +1,3 @@
+[submodule "libqueue"]
+	path = libqueue
+	url = https://github.com/LuigiEnzoFerrari/libqueue
