@@ -6,3 +6,4 @@ test/
 *.pdf
 script.sh
 .vscode
+*.py
