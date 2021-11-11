@@ -6,18 +6,13 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/11 07:33:49 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/11 08:30:35 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <sys/queue.h>
 
-int	print_error(void)
-{
-	ft_putendl_fd("Error", STDERR_FILENO);
-	return (EXIT_FAILURE);
-}
 
 void	sorting_2(t_node **stack, void(*swapping)(t_node **))
 {

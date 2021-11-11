@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 21:51:05 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/11 08:33:42 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ void	send_chunks_of_20(t_node **stack_a, t_node **stack_b);
 int		find_the_xth(t_node *stack, size_t x);
 void	put_the_next_on_top(t_node **stack_b, int pivot);
 int		value_to_put_on_top(t_node *stack_a, int value);
+
+int	print_error(void);
 
 #endif

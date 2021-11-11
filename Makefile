@@ -8,24 +8,31 @@ OFLAGS :=
 
 LINK_LIB := -L libft -L libqueue -lft -lqueue
 
-SRCS_PUSH_SW = main.c push_swap_rotate.c pa_pb.c sa_sb_ss.c \
-		ra_rb_rr.c rra_rrb_rrr.c check_args.c init_stack_a.c \
+SRCS = print_error.c check_args.c init_stack_a.c push_swap_rotate.c
+
+SRCS_PUSH_SW = main.c pa_pb.c sa_sb_ss.c \
+		ra_rb_rr.c rra_rrb_rrr.c \
 		trinity.c infinity.c bubblesort.c send_all_to_stack_b.c \
 		nearest_value.c insert_all_to_stack_a.c insert_all_to_stack_a_utils.c \
 		is_sorted.c
 
-PATH_PUSH_SW = $(addprefix push_swap_srcs/, $(SRCS_PUSH_SW))
 SRCS_CHECKER = main.c
-SRCS_CHECKER = $(addprefix push_swap_srcs/, $(SRCS_CHECKER))
+
+PATH_SRCS = $(addprefix srcs/, $(SRCS))
+PATH_PUSH_SW = $(addprefix push_swap_srcs/, $(SRCS_PUSH_SW))
+PATH_CHECKER = $(addprefix checker_srcs/, $(SRCS_CHECKER))
 
 SRCS_LIBS = libft/libft.a libqueue/libqueue.a
 
 INC = include
 
-all: $(PUSH_SW_NAME)
+all: $(PUSH_SW_NAME) $(CHECKER_NAME)
 
-$(PUSH_SW_NAME): $(PATH_PUSH_SW) $(SRCS_LIBS)
-	$(CC) $(CFLAGS) $(SANIT) $(PATH_PUSH_SW) $(LINK_LIB) -o $@ -I $(INC)
+$(PUSH_SW_NAME): $(PATH_PUSH_SW) $(SRCS_LIBS) $(PATH_SRCS)
+	$(CC) $(CFLAGS) $(SANIT) $(PATH_PUSH_SW) $(PATH_SRCS) $(LINK_LIB) -o $@ -I $(INC)
+
+$(CHECKER_NAME): $(PATH_CHECKER) $(SRCS_LIBS)
+	$(CC) $(CFLAGS) $(SANIT) $(PATH_CHECKER) $(PATH_SRCS) $(LINK_LIB) -o $@ -I $(INC)
 
 $(SRCS_LIBS):
 	make -C libft
