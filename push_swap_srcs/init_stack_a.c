@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:50:01 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 09:56:51 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/10 21:52:37 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	init_stack_a(t_node **stack_a, char **argv)
 		{
 			lstDelete(stack_a);
 			ft_arrayfree(argv);
-			return (print_error(7));
+			return (1);
 		}
 		i++;
 	}

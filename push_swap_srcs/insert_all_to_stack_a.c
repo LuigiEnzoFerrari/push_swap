@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:23:02 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/09 09:27:10 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/10 10:24:14 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	value_to_put_on_top(t_node *stack_a, int value)
 	return (data);
 }
 
-void	preparing_stack_a(t_node **stack_a, t_node **stack_b)
+void	preparing_stack_a(t_node **stack_a, int pivot)
 {
 	int	top_value;
 	int	direction;
 
-	top_value = value_to_put_on_top((*stack_a), (*stack_b)->data);
+	top_value = value_to_put_on_top((*stack_a), pivot);
 	direction = nearest_pivot((*stack_a), top_value);
 	if (direction > 0)
 		while ((*stack_a)->data != top_value)
@@ -75,7 +75,7 @@ void	insert_remainder_of_20(t_node **stack_a, t_node **stack_b)
 	while (remainder--)
 	{
 		put_the_next_on_top(stack_b, pivot);
-		preparing_stack_a(stack_a, stack_b);
+		preparing_stack_a(stack_a, (*stack_b)->data);
 		pa(stack_a, stack_b);
 	}
 }

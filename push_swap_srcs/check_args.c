@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:23:25 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:23:26 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/10 21:52:10 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ static int	is_all_int(char **argv)
 		while (*((*argv) + i) != '\0')
 		{
 			if (!ft_isdigit(*((*argv) + i)))
-				return (print_error(2));
+				return (1);
 			i++;
 		}
 		if (has_more_dig_than_int(*argv))
-			return (print_error(3));
+			return (1);
 		argv++;
 	}
 	return (0);
@@ -72,7 +72,7 @@ int	checker_args(char ***argv)
 
 	one_arg = ((*argv)[1] == NULL);
 	if ((*argv)[0] == NULL)
-		return (print_error(5));
+		return (1);
 	if (one_arg)
 		(*argv) = ft_split((*argv)[0], ' ');
 	else
@@ -80,12 +80,12 @@ int	checker_args(char ***argv)
 	if (is_replicated((*argv)))
 	{
 		ft_arrayfree(*argv);
-		return (print_error(8));
+		return (1);
 	}
 	if (is_all_int((*argv)))
 	{
 		ft_arrayfree(*argv);
-		return (print_error(4));
+		return (1);
 	}
 	return (0);
 }

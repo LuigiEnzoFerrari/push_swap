@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:50:11 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/09 09:28:43 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/10 10:26:56 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ static int	has_numbers_left(t_node *stack, int pivot)
 ** Return the 20th number of a sorted list as reference.
 */
 
-int	find_the_xth(t_node *stack_b, size_t x)
+int	find_the_xth(t_node *stack, size_t x)
 {
-	t_node	*sorted_b;
+	t_node	*sorted;
 	t_node	*ptr;
 	int		data;
 
-	sorted_b = bubblesort_reverse(stack_b);
-	ptr = sorted_b;
-	while (--x && sorted_b != NULL)
-		sorted_b = sorted_b->next;
-	data = sorted_b->data;
+	sorted = bubblesort_reverse(stack);
+	ptr = sorted;
+	while (--x && sorted != NULL)
+		sorted = sorted->next;
+	data = sorted->data;
 	lstFree(ptr);
 	return (data);
 }
@@ -74,7 +74,7 @@ void	send_chunks_of_20(t_node **stack_a, t_node **stack_b)
 	while (has_numbers_left((*stack_b), pivot))
 	{
 		put_the_next_on_top(stack_b, pivot);
-		preparing_stack_a(stack_a, stack_b);
+		preparing_stack_a(stack_a, (*stack_b)->data);
 		pa(stack_a, stack_b);
 	}
 }
