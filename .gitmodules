@@ -1,6 +1,0 @@
-[submodule "libqueue"]
-	path = libqueue
-	url = https://github.com/LuigiEnzoFerrari/libqueue
-[submodule "libft"]
-	path = libft
-	url = https://github.com/LuigiEnzoFerrari/42School_Libft
