@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:23:25 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 21:52:10 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/11 07:39:14 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,6 @@ int	checker_args(char ***argv)
 	int	one_arg;
 
 	one_arg = ((*argv)[1] == NULL);
-	if ((*argv)[0] == NULL)
-		return (1);
 	if (one_arg)
 		(*argv) = ft_split((*argv)[0], ' ');
 	else

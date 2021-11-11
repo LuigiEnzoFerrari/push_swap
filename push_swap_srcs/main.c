@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 21:49:53 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/11 07:33:49 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	argv++;
+	if (*argv == NULL)
+		return (0);
 	if (checker_args(&argv))
 		return (print_error());
 	if (init_stack_a(&stack_a, argv))
