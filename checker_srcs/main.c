@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:36:36 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/12 08:54:15 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/12 10:51:13 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 int	check_instructions(char *str)
 {
 	if (ft_strcmp(str, "rra") == 0 || ft_strcmp(str, "rrb") == 0
-		|| ft_strcmp(str, "rrr") == 0
 		|| ft_strcmp(str, "ra") == 0 || ft_strcmp(str, "rb") == 0
-		|| ft_strcmp(str, "rr") == 0
 		|| ft_strcmp(str, "sa") == 0 || ft_strcmp(str, "sb") == 0
-		|| ft_strcmp(str, "ss") == 0
-		|| ft_strcmp(str, "pa") == 0 || ft_strcmp(str, "pb") == 0)
+		|| ft_strcmp(str, "pa") == 0 || ft_strcmp(str, "pb") == 0
+		|| ft_strcmp(str, "rr") == 0 || ft_strcmp(str, "ss") == 0
+		|| ft_strcmp(str, "rrr") == 0)
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 10:14:58 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/09/29 18:27:26 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/12 11:01:38 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	sb(t_node **stack)
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
-	if (isNextNodeEmpty(*stack_a) || isNextNodeEmpty(*stack_b))
-		return ;
 	swap(stack_a);
 	swap(stack_b);
 	ft_putstr("ss\n");

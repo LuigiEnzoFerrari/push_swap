@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 12:10:09 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/10/06 10:05:55 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/12 11:01:47 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	rrb(t_node **stack_a)
 
 void	rrr(t_node **stack_a, t_node **stack_b)
 {
-	if (isNextNodeEmpty(*stack_a) || isNextNodeEmpty(*stack_b))
-		return ;
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
 	ft_putstr("rrr\n");

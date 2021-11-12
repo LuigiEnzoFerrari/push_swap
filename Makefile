@@ -41,6 +41,7 @@ $(SRCS_LIBS):
 
 clean:
 	$(RM) $(PUSH_SW_NAME)
+	$(RM) $(CHECKER_NAME)
 
 fclean: clean
 	make fclean -C libft
