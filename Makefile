@@ -8,15 +8,16 @@ OFLAGS :=
 
 LINK_LIB := -L libft -L libqueue -lft -lqueue
 
-SRCS = print_error.c check_args.c init_stack_a.c push_swap_rotate.c
+SRCS = push_swap_rotate.c \
+	print_error.c check_args.c init_stack_a.c \
+	bubblesort.c issorted.c \
 
 SRCS_PUSH_SW = main.c pa_pb.c sa_sb_ss.c \
 		ra_rb_rr.c rra_rrb_rrr.c \
-		trinity.c infinity.c bubblesort.c send_all_to_stack_b.c \
+		trinity.c infinity.c send_all_to_stack_b.c \
 		nearest_value.c insert_all_to_stack_a.c insert_all_to_stack_a_utils.c \
-		is_sorted.c
 
-SRCS_CHECKER = main.c
+SRCS_CHECKER = main.c apply_instructions.c 
 
 PATH_SRCS = $(addprefix srcs/, $(SRCS))
 PATH_PUSH_SW = $(addprefix push_swap_srcs/, $(SRCS_PUSH_SW))

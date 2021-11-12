@@ -6,13 +6,12 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/11 08:30:35 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:39:39 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <sys/queue.h>
-
 
 void	sorting_2(t_node **stack, void(*swapping)(t_node **))
 {

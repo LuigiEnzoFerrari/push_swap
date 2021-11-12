@@ -9,3 +9,5 @@ test/
 script.sh
 .vscode
 *.py
+checker_linux
+checker
