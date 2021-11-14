@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:22:59 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/09 09:30:47 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:43:03 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	find_the_100nth(t_node *stack_a)
 ** 0 otherwise.
 */
 
-static int	has_numbers_left(t_node *stack, int pivot)
+static int	has_numbers_left_100(t_node *stack, int pivot)
 {
 	while (stack != NULL)
 	{
@@ -68,7 +68,7 @@ static int	put_the_next_on_top_a(t_node **stack_a, int pivot)
 
 int	send_chunks_of_one_hundred(t_node **stack_a, t_node **stack_b, int pivot)
 {
-	while (has_numbers_left((*stack_a), pivot))
+	while (has_numbers_left_100((*stack_a), pivot))
 	{
 		put_the_next_on_top_a(stack_a, pivot);
 		pb(stack_a, stack_b);

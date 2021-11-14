@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/12 07:44:46 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:47:48 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,16 @@ int		nearest_pivot_or_above(t_node *stack, int pivot);
 
 void	preparing_stack_a(t_node **stack_a, int pivot);
 
-void	send_chunks_of_20(t_node **stack_a, t_node **stack_b);
+void	send_chunks_of_x(t_node **stack_a, t_node **stack_b, size_t x);
 int		find_the_xth(t_node *stack, size_t x);
 void	put_the_next_on_top(t_node **stack_b, int pivot);
 int		value_to_put_on_top(t_node *stack_a, int value);
+int		has_numbers_left(t_node *stack, int pivot);
 
 int		print_error(void);
 
 void	apply_instructions(t_node **stack_a,
 			t_node **stack_b, char *instruction);
+void	preparing_stack_ab(t_node **stack_a, t_node **stack_b, int pivot);
 
 #endif

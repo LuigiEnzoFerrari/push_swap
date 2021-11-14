@@ -16,6 +16,7 @@ SRCS_PUSH_SW = main.c pa_pb.c sa_sb_ss.c \
 		ra_rb_rr.c rra_rrb_rrr.c \
 		trinity.c infinity.c send_all_to_stack_b.c \
 		nearest_value.c insert_all_to_stack_a.c insert_all_to_stack_a_utils.c \
+		prepare_stacks.c
 
 SRCS_CHECKER = main.c apply_instructions.c 
 

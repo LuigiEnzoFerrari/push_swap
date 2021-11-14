@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:50:11 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 10:26:56 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:40:33 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	put_the_next_on_top(t_node **stack_b, int pivot)
 ** Check if has values bigger or equal the pivot
 */
 
-static int	has_numbers_left(t_node *stack, int pivot)
+int	has_numbers_left(t_node *stack, int pivot)
 {
 	while (stack != NULL)
 	{
@@ -58,23 +58,4 @@ int	find_the_xth(t_node *stack, size_t x)
 	data = sorted->data;
 	lstFree(ptr);
 	return (data);
-}
-
-/*
-** Insert nodes from the stack_a to stack_b in chucks of 20
-*/
-
-void	send_chunks_of_20(t_node **stack_a, t_node **stack_b)
-{
-	int	x;
-	int	pivot;
-
-	x = 20;
-	pivot = find_the_xth((*stack_b), 20);
-	while (has_numbers_left((*stack_b), pivot))
-	{
-		put_the_next_on_top(stack_b, pivot);
-		preparing_stack_a(stack_a, (*stack_b)->data);
-		pa(stack_a, stack_b);
-	}
 }

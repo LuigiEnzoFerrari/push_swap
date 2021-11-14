@@ -6,11 +6,16 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:23:02 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 10:24:14 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 16:47:38 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+/*
+** Return the value of the given stack to put on top to receive
+** a specific value.
+*/
 
 int	value_to_put_on_top(t_node *stack_a, int value)
 {
@@ -27,21 +32,6 @@ int	value_to_put_on_top(t_node *stack_a, int value)
 	data = cpy->data;
 	lstFree(cpy);
 	return (data);
-}
-
-void	preparing_stack_a(t_node **stack_a, int pivot)
-{
-	int	top_value;
-	int	direction;
-
-	top_value = value_to_put_on_top((*stack_a), pivot);
-	direction = nearest_pivot((*stack_a), top_value);
-	if (direction > 0)
-		while ((*stack_a)->data != top_value)
-			ra(stack_a);
-	else
-		while ((*stack_a)->data != top_value)
-			rra(stack_a);
 }
 
 /*
@@ -69,11 +59,34 @@ void	insert_remainder_of_20(t_node **stack_a, t_node **stack_b)
 {
 	int		remainder;
 	int		pivot;
+	size_t	lst_size;
 
-	remainder = lstSize((*stack_b)) % 20;
+	lst_size = lstSize((*stack_b));
+	remainder = lst_size % 20;
+	if (remainder == 0)
+		remainder = 20;
 	pivot = find_the_xth((*stack_b), remainder);
 	while (remainder--)
 	{
+		preparing_stack_ab(stack_a, stack_b, pivot);
+		put_the_next_on_top(stack_b, pivot);
+		preparing_stack_a(stack_a, (*stack_b)->data);
+		pa(stack_a, stack_b);
+	}
+}
+
+/*
+** Insert nodes from the stack_a to stack_b in chucks of x numbers
+*/
+
+void	send_chunks_of_x(t_node **stack_a, t_node **stack_b, size_t x)
+{
+	int	pivot;
+
+	pivot = find_the_xth((*stack_b), x);
+	while (has_numbers_left((*stack_b), pivot))
+	{
+		preparing_stack_ab(stack_a, stack_b, pivot);
 		put_the_next_on_top(stack_b, pivot);
 		preparing_stack_a(stack_a, (*stack_b)->data);
 		pa(stack_a, stack_b);
@@ -87,13 +100,16 @@ void	insert_remainder_of_20(t_node **stack_a, t_node **stack_b)
 
 void	insert_all_to_stack_a(t_node **stack_a, t_node **stack_b)
 {
-	size_t	twentys;
+	size_t	sets;
 	int		min;
 
 	insert_remainder_of_20(stack_a, stack_b);
-	twentys = how_many_sets_of_x(lstSize((*stack_b)), 20);
-	while (twentys--)
-		send_chunks_of_20(stack_a, stack_b);
+	sets = how_many_sets_of_x(lstSize((*stack_b)), 20);
+	while (sets-- > 5)
+		send_chunks_of_x(stack_a, stack_b, 20);
+	sets = how_many_sets_of_x(lstSize(*stack_b), 10);
+	while (sets--)
+		send_chunks_of_x(stack_a, stack_b, 10);
 	min = nodeMin((*stack_a))->data;
 	while ((*stack_a)->data != min)
 		rra(stack_a);
