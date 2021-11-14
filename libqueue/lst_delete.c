@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstDuplicate.c                                     :+:      :+:    :+:   */
+/*   lst_delete.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:08:20 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:11:13 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:11:15 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** return a linked list with the same values, size, order.
-*/
-
 #include <libqueue.h>
 
-t_node	*lstDuplicate(t_node *lst)
-{
-	t_node	*cpy;
+/*
+** Free and deletes all the nodes on the list using recursion
+** 
+*/
 
-	cpy = NULL;
-	while (lst)
-	{
-		insertEnd(&cpy, lst->data);
-		lst = lst->next;
-	}
-	return (cpy);
+void	lst_delete(t_node **lst)
+{
+	if (*lst == NULL)
+		return ;
+	lst_delete(&(*lst)->next);
+	node_delete(lst);
 }

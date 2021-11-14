@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insertEnd.c                                        :+:      :+:    :+:   */
+/*   node_max.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:02 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:08:03 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:12:14 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:12:15 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Creates a node with the given data value
-** and inserts it into the end of the linked list
+** Return a pointer to a node in a linked list with the max value on it.
+** if the list has the max value duplicated the return should be the
+** pointer to the first occurrence.
 */
 
-void	insertEnd(t_node **lst, int data)
+t_node	*node_max(t_node *lst)
 {
-	t_node	*node;
+	t_node	*ptr;
 
-	node = newNode(data);
-	if (*lst != NULL)
-		nodeLast(*lst)->next = node;
-	else
-		*lst = node;
+	ptr = lst;
+	while (lst != NULL)
+	{
+		if (lst->data > ptr->data)
+			ptr = lst;
+		lst = lst->next;
+	}
+	return (ptr);
 }

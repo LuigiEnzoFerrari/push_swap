@@ -1,51 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstPrint.c                                         :+:      :+:    :+:   */
+/*   node_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:27 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:45:11 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:12:21 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:12:22 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
-#include <stdio.h>
-
-static void	pchar(char c)
-{
-	write(1, &c, 1);
-}
-
-static void	putnbr(int nb)
-{
-	long int	num;
-
-	num = nb;
-	if (nb < 0)
-	{
-		pchar('-');
-		num = -num;
-	}
-	if (num >= 10)
-		putnbr(num / 10);
-	pchar((num % 10) + '0');
-}
 
 /*
-** Print on stdout all the data values on the lst, each one followed
-** by a endline.
+** Return a pointer to a node in a linked list with the min value on it.
+** if the list has the min value duplicated the return should be the
+** pointer to the first occurrence.
 */
 
-void	lstPrint(t_node *lst, int c)
+t_node	*node_min(t_node *lst)
 {
+	t_node	*ptr;
+
+	ptr = lst;
 	while (lst != NULL)
 	{
-		putnbr(lst->data);
+		if (lst->data < ptr->data)
+			ptr = lst;
 		lst = lst->next;
-		if (lst != NULL)
-			pchar(c);
 	}
-	pchar('\n');
+	return (ptr);
 }

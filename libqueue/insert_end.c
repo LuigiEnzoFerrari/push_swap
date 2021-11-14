@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstFree.c                                          :+:      :+:    :+:   */
+/*   insert_end.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:23 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:08:25 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:12:37 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:12:38 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Free all the nodes on the list using recursion
+** Creates a node with the given data value
+** and inserts it into the end of the linked list
 */
 
-void	lstFree(t_node *lst)
+void	insert_end(t_node **lst, int data)
 {
-	if (lst == NULL)
-		return ;
-	lstFree(lst->next);
-	nodeFree(lst);
+	t_node	*node;
+
+	node = new_node(data);
+	if (*lst != NULL)
+		node_last(*lst)->next = node;
+	else
+		*lst = node;
 }

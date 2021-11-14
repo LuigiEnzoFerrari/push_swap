@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:36:36 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/12 10:51:13 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:50:20 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	checker_algorithms_init(t_node **stack_a, t_node **stack_b)
 	{
 		if (check_instructions(str))
 		{
-			lstDelete(stack_a);
-			lstDelete(stack_b);
+			lst_delete(stack_a);
+			lst_delete(stack_b);
 			free(str);
 			return (-1);
 		}
@@ -45,8 +45,8 @@ int	checker_algorithms_init(t_node **stack_a, t_node **stack_b)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);
-	lstDelete(stack_a);
-	lstDelete(stack_b);
+	lst_delete(stack_a);
+	lst_delete(stack_b);
 	return (0);
 }
 

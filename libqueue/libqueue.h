@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:08:12 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:11:03 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 19:06:10 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ struct s_node
 
 typedef struct s_node	t_node;
 
-t_node	*newNode(int data);
-t_node	*nodeLast(t_node *lst);
+t_node	*new_node(int data);
+t_node	*node_last(t_node *lst);
 
-void	insertFront(t_node **lst, int data);
-void	insertEnd(t_node **lst, int data);
+void	insert_front(t_node **lst, int data);
+void	insert_end(t_node **lst, int data);
 
-void	lstFree(t_node *lst);
-void	nodeFree(t_node *lst);
+void	lst_free(t_node *lst);
+void	node_free(t_node *lst);
 
-void	lstDelete(t_node **lst);
-void	nodeDelete(t_node **lst);
+void	lst_delete(t_node **lst);
+void	node_delete(t_node **lst);
 
-t_node	*lstDuplicate(t_node *lst);
-size_t	lstSize(t_node *lst);
-void	lstPrint(t_node *lst, int c);
-t_node	*nodeMin(t_node *lst);
-t_node	*nodeMax(t_node *lst);
+t_node	*lst_duplicate(t_node *lst);
+size_t	lst_size(t_node *lst);
+void	lst_print(t_node *lst, int c);
+t_node	*node_min(t_node *lst);
+t_node	*node_max(t_node *lst);
 
 #endif

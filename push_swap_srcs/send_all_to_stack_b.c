@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:22:59 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/14 16:43:03 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:55:22 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	find_the_100nth(t_node *stack_a)
 	while (--one_hundred && sorted_a->next->next->next != NULL)
 		sorted_a = sorted_a->next;
 	data = sorted_a->data;
-	lstFree(ptr);
+	lst_free(ptr);
 	return (data);
 }
 
@@ -85,7 +85,7 @@ int	send_all_to_stack_b(t_node **stack_a, t_node **stack_b)
 {
 	int		pivot;
 
-	while (lstSize(*stack_a) > 2)
+	while (lst_size(*stack_a) > 2)
 	{
 		pivot = find_the_100nth((*stack_a));
 		send_chunks_of_one_hundred(stack_a, stack_b, pivot);

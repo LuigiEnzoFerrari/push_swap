@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:50:01 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 21:52:37 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:48:20 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int	init_stack_a(t_node **stack_a, char **argv)
 	while (argv[i])
 	{
 		max = ft_atoll(argv[i]);
-		insertEnd(stack_a, max);
+		insert_end(stack_a, max);
 		if (is_max_min_of_a_int(max))
 		{
-			lstDelete(stack_a);
+			lst_delete(stack_a);
 			ft_arrayfree(argv);
 			return (1);
 		}

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newNode.c                                          :+:      :+:    :+:   */
+/*   node_delete.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:35 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:08:36 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:11:54 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:11:55 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Return a allocated node of a linked list
-** with the given data value on it.
+** Free and delete the given pointer to a node in a linked list
 */
 
-t_node	*newNode(int data)
+void	node_delete(t_node **lst)
 {
-	t_node	*node;
-
-	node = malloc(sizeof(t_node));
-	if (node == NULL)
-		return (NULL);
-	node->next = NULL;
-	node->data = data;
-	return (node);
+	if (*lst != NULL)
+		free(*lst);
+	*lst = NULL;
 }

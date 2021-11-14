@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeMax.c                                          :+:      :+:    :+:   */
+/*   lst_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:48 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:38:47 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:11:40 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:11:41 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Return a pointer to a node in a linked list with the max value on it.
-** if the list has the max value duplicated the return should be the
-** pointer to the first occurrence.
+** Return the number of nodes in a list from head to tail
 */
 
-t_node	*nodeMax(t_node *lst)
+size_t	lst_size(t_node *lst)
 {
-	t_node	*ptr;
+	size_t	i;
 
-	ptr = lst;
-	while (lst != NULL)
+	i = 0;
+	while (lst)
 	{
-		if (lst->data > ptr->data)
-			ptr = lst;
 		lst = lst->next;
+		i++;
 	}
-	return (ptr);
+	return (i);
 }

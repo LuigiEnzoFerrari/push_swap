@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeLast.c                                         :+:      :+:    :+:   */
+/*   node_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:45 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:08:46 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:12:01 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:12:02 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
 
 /*
-** Return a pointer to the last valid node on the list
+** Free and delete the given pointer to a node in a linked list
 */
 
-t_node	*nodeLast(t_node *lst)
+void	node_free(t_node *lst)
 {
 	if (lst != NULL)
-		while (lst->next)
-			lst = lst->next;
-	return (lst);
+		free(lst);
 }

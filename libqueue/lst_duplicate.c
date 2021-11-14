@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodeDelete.c                                       :+:      :+:    :+:   */
+/*   lst_duplicate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:38 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/10 03:35:20 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:11:19 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:11:21 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libqueue.h>
-
 /*
-** Free and delete the given pointer to a node in a linked list
+** return a linked list with the same values, size, order.
 */
 
-void	nodeDelete(t_node **lst)
+#include <libqueue.h>
+
+t_node	*lst_duplicate(t_node *lst)
 {
-	if (*lst != NULL)
-		free(*lst);
-	*lst = NULL;
+	t_node	*cpy;
+
+	cpy = NULL;
+	while (lst)
+	{
+		insert_end(&cpy, lst->data);
+		lst = lst->next;
+	}
+	return (cpy);
 }

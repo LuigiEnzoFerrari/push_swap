@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:50:11 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/14 16:40:33 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:55:22 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	put_the_next_on_top(t_node **stack_b, int pivot)
 	int		direction;
 
 	direction = nearest_pivot_or_above((*stack_b), pivot);
-	if (direction > 0 || lstSize((*stack_b)) <= 100)
+	if (direction > 0 || lst_size((*stack_b)) <= 100)
 		rotating = &rb;
 	else
 		rotating = &rrb;
@@ -56,6 +56,6 @@ int	find_the_xth(t_node *stack, size_t x)
 	while (--x && sorted != NULL)
 		sorted = sorted->next;
 	data = sorted->data;
-	lstFree(ptr);
+	lst_free(ptr);
 	return (data);
 }

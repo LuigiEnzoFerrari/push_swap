@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:22:40 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/11 08:58:59 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:44:34 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_node	*bubblesort(t_node *lst)
 	size_t	lst_size1;
 	size_t	index;
 
-	lst_cpy = lstDuplicate(lst);
+	lst_cpy = lst_duplicate(lst);
 	lst_ptr = lst_cpy;
-	lst_size1 = lstSize(lst);
+	lst_size1 = lst_size(lst);
 	index = 0;
 	while (lst_size1--)
 	{
@@ -54,9 +54,9 @@ t_node	*bubblesort_reverse(t_node *lst)
 	size_t	lst_size1;
 	size_t	index;
 
-	lst_cpy = lstDuplicate(lst);
+	lst_cpy = lst_duplicate(lst);
 	lst_ptr = lst_cpy;
-	lst_size1 = lstSize(lst);
+	lst_size1 = lst_size(lst);
 	index = 0;
 	while (lst_size1--)
 	{

@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:01 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/12 08:43:31 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 19:09:39 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** if it's NULL return 1
 */
 
-int	isNextNodeEmpty(t_node *lst)
+int	is_next_empty(t_node *lst)
 {
 	return (lst == NULL || lst->next == NULL);
 }
@@ -30,7 +30,7 @@ int	swap(t_node **lst)
 {
 	t_node	*node;
 
-	if (isNextNodeEmpty(*lst))
+	if (is_next_empty(*lst))
 		return (-1);
 	node = *lst;
 	(*lst) = (*lst)->next;
@@ -47,12 +47,12 @@ int	rotate(t_node **lst)
 {
 	t_node	*node;
 
-	if (isNextNodeEmpty(*lst))
+	if (is_next_empty(*lst))
 		return (-1);
 	node = (*lst);
 	(*lst) = (*lst)->next;
 	node->next = NULL;
-	nodeLast((*lst))->next = node;
+	node_last((*lst))->next = node;
 	return (0);
 }
 
@@ -65,11 +65,11 @@ int	reverse_rotate(t_node **lst)
 	t_node	*node;
 	t_node	*last;
 
-	if (isNextNodeEmpty(*lst))
+	if (is_next_empty(*lst))
 		return (-1);
 	node = (*lst);
 	last = node;
-	(*lst) = nodeLast((*lst));
+	(*lst) = node_last((*lst));
 	while (last->next->next != NULL)
 		last = last->next;
 	(*lst)->next = node;

@@ -6,14 +6,14 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:13 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/11 23:39:39 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:57:25 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 #include <sys/queue.h>
 
-void	sorting_2(t_node **stack, void(*swapping)(t_node **))
+void	sorting_2(t_node **stack, void (*swapping)(t_node **))
 {
 	if ((*stack)->data > (*stack)->next->data)
 		swapping(stack);
@@ -21,9 +21,9 @@ void	sorting_2(t_node **stack, void(*swapping)(t_node **))
 
 void	quintuple(t_node **stack_a, t_node **stack_b)
 {
-	while (lstSize((*stack_a)) > 3)
+	while (lst_size((*stack_a)) > 3)
 	{
-		if ((*stack_a)->data == nodeMax((*stack_a))->data)
+		if ((*stack_a)->data == node_max((*stack_a))->data)
 			ra(stack_a);
 		pb(stack_a, stack_b);
 	}
@@ -33,14 +33,14 @@ void	quintuple(t_node **stack_a, t_node **stack_b)
 		preparing_stack_a(stack_a, (*stack_b)->data);
 		pa(stack_a, stack_b);
 	}
-	preparing_stack_a(stack_a, nodeMin((*stack_a))->data);
+	preparing_stack_a(stack_a, node_min((*stack_a))->data);
 }
 
 void	algorithms_init(t_node **stack_a, t_node **stack_b)
 {
 	size_t	n;
 
-	n = lstSize(*stack_a);
+	n = lst_size(*stack_a);
 	if (issorted(*stack_a))
 		;
 	else if (n == 2)
@@ -51,8 +51,8 @@ void	algorithms_init(t_node **stack_a, t_node **stack_b)
 		quintuple(stack_a, stack_b);
 	else
 		infinity(stack_a, stack_b);
-	lstDelete(stack_a);
-	lstDelete(stack_b);
+	lst_delete(stack_a);
+	lst_delete(stack_b);
 }
 
 int	main(int argc, char **argv)

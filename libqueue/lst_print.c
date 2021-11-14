@@ -1,30 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstSize.c                                          :+:      :+:    :+:   */
+/*   lst_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 10:08:31 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/08 10:10:46 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2021/11/14 19:11:33 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2021/11/14 19:11:34 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libqueue.h>
+#include <stdio.h>
+
+static void	pchar(char c)
+{
+	write(1, &c, 1);
+}
+
+static void	putnbr(int nb)
+{
+	long int	num;
+
+	num = nb;
+	if (nb < 0)
+	{
+		pchar('-');
+		num = -num;
+	}
+	if (num >= 10)
+		putnbr(num / 10);
+	pchar((num % 10) + '0');
+}
 
 /*
-** Return the number of nodes in a list from head to tail
+** Print on stdout all the data values on the lst, each one followed
+** by a endline.
 */
 
-size_t	lstSize(t_node *lst)
+void	lst_print(t_node *lst, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (lst)
+	while (lst != NULL)
 	{
+		putnbr(lst->data);
 		lst = lst->next;
-		i++;
+		if (lst != NULL)
+			pchar(c);
 	}
-	return (i);
+	pchar('\n');
 }

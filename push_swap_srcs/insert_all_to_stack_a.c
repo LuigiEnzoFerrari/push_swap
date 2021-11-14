@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:23:02 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/14 16:47:38 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 19:13:44 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	value_to_put_on_top(t_node *stack_a, int value)
 	int		min;
 	int		data;
 
-	cpy = lstDuplicate(stack_a);
-	min = nodeMin(stack_a)->data;
+	cpy = lst_duplicate(stack_a);
+	min = node_min(stack_a)->data;
 	while (cpy->data != min)
 		reverse_rotate(&cpy);
 	while (value > cpy->data)
 		rotate(&cpy);
 	data = cpy->data;
-	lstFree(cpy);
+	lst_free(cpy);
 	return (data);
 }
 
@@ -59,10 +59,10 @@ void	insert_remainder_of_20(t_node **stack_a, t_node **stack_b)
 {
 	int		remainder;
 	int		pivot;
-	size_t	lst_size;
+	size_t	size;
 
-	lst_size = lstSize((*stack_b));
-	remainder = lst_size % 20;
+	size = lst_size((*stack_b));
+	remainder = size % 20;
 	if (remainder == 0)
 		remainder = 20;
 	pivot = find_the_xth((*stack_b), remainder);
@@ -104,13 +104,13 @@ void	insert_all_to_stack_a(t_node **stack_a, t_node **stack_b)
 	int		min;
 
 	insert_remainder_of_20(stack_a, stack_b);
-	sets = how_many_sets_of_x(lstSize((*stack_b)), 20);
+	sets = how_many_sets_of_x(lst_size((*stack_b)), 20);
 	while (sets-- > 5)
 		send_chunks_of_x(stack_a, stack_b, 20);
-	sets = how_many_sets_of_x(lstSize(*stack_b), 10);
+	sets = how_many_sets_of_x(lst_size(*stack_b), 10);
 	while (sets--)
 		send_chunks_of_x(stack_a, stack_b, 10);
-	min = nodeMin((*stack_a))->data;
+	min = node_min((*stack_a))->data;
 	while ((*stack_a)->data != min)
 		rra(stack_a);
 }
