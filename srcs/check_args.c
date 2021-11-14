@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:23:25 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/11 07:39:14 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2021/11/14 18:06:02 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	has_more_dig_than_int(char *n)
 	len = ft_strlen(n);
 	if (*n == '-' && len > 11)
 		return (-1);
-	else if (len > 10)
+	else if (*n != '-' && len > 10)
 		return (-1);
 	return (0);
 }
