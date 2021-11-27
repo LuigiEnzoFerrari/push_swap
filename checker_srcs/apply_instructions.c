@@ -23,6 +23,11 @@ static void	apply_push(t_node **stack_a, t_node **stack_b,
 		f(stack_b, stack_a);
 }
 
+/*
+** Apply the instruction received in the char* variable
+** instruction to the proper given stacks.
+*/
+
 void	apply_instructions(t_node **stack_a, t_node **stack_b,
 	char *instruction)
 {
