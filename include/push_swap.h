@@ -23,4 +23,7 @@ void	sa(t_node **stack);
 void	sb(t_node **stack);
 void	ss(t_node **stack_a, t_node **stack_b);
 
+void	apply_instructions(t_node **stack_a, t_node **stack_b,
+			char *instruction);
+
 #endif

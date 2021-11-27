@@ -8,6 +8,9 @@ BASE_PATH := $(addprefix base_srcs/, $(BASE))
 PUSH_SRCS := pa_pb.c ra_rb_rr.c rra_rrb_rrr.c sa_sb_ss.c
 PUSH_SWAP_PATH := $(addprefix push_swap_srcs/, $(PUSH_SRCS))
 
+CHECKER_SRCS := apply_instructions.c
+CHECKER_PATH := $(addprefix checker_srcs/, $(CHECKER_SRCS))
+
 LIBS := liblist.a
 LIB_PATH := list
 
@@ -18,7 +21,7 @@ INC := include/ list/
 INC_PATH := $(addprefix -I , $(INC))
 
 
-ALL_SRCS := $(BASE_PATH) $(PUSH_SWAP_PATH)
+ALL_SRCS := $(BASE_PATH) $(PUSH_SWAP_PATH) $(CHECKER_PATH)
 
 all: a.out
 
