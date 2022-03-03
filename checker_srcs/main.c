@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 23:36:36 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/14 18:50:20 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:43:49 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int	checker_algorithms_init(t_node **stack_a, t_node **stack_b)
 	}
 	free(str);
 	if ((issorted(*stack_a)) && (*stack_b) == NULL)
-		ft_putendl_fd("OK", 1);
+		write(STDOUT_FILENO, "OK", 2);
 	else
-		ft_putendl_fd("KO", 1);
+		write(STDOUT_FILENO, "KO", 2);
 	lst_delete(stack_a);
 	lst_delete(stack_b);
 	return (0);

@@ -1,0 +1,19 @@
+name: norminette
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup-python
+      - uses: actions/setup-python@v2
+        with:
+         python-version: '3.9'
+      - name: install python dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools
+          python -m pip install norminette
+      - name: linter
+        run: norminette

@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa_pb.c                                            :+:      :+:    :+:   */
+/*   string_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/31 10:14:20 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2022/03/03 11:54:16 by lenzo-pe         ###   ########.fr       */
+/*   Created: 2022/03/03 12:58:01 by lenzo-pe          #+#    #+#             */
+/*   Updated: 2022/03/03 12:58:51 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "utils.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+size_t	ft_strlen(const char *str)
 {
-	if ((*stack_b) == NULL)
-		return ;
-	push(stack_a, stack_b);
-	write(STDOUT_FILENO, "pa\n", 3);
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
-void	pb(t_node **stack_a, t_node **stack_b)
+size_t	ft_strclen(const char *str, int c)
 {
-	if ((*stack_a) == NULL)
-		return ;
-	push(stack_b, stack_a);
-	write(STDOUT_FILENO, "pb\n", 3);
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] && str[i] != c)
+		i++;
+	return (i);
+}
+
+size_t	ft_strnlen(const char *str, size_t maxlen)
+{
+	size_t	i;
+
+	i = 0;
+	while (maxlen > i && str[i])
+		i++;
+	return (i);
 }

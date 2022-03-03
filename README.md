@@ -1,3 +1,5 @@
+![norminette](https://github.com/LuigiEnzoFerrari/push_swap/actions/workflows/linter.yml/badge.svg)  
+
 # PUSH_SWAP  
 
 ## Overview  

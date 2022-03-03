@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 10:14:58 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/12 11:01:38 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/03/03 11:55:46 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@ void	sa(t_node **stack)
 {
 	if (swap(stack))
 		return ;
-	ft_putstr("sa\n");
+	write(STDOUT_FILENO, "sa\n", 3);
 }
 
 void	sb(t_node **stack)
 {
 	if (swap(stack))
 		return ;
-	ft_putstr("sb\n");
+	write(STDOUT_FILENO, "sb\n", 3);
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_putstr("ss\n");
+	write(STDOUT_FILENO, "ss\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: lenzo-pe <lenzo-pe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 05:53:19 by lenzo-pe          #+#    #+#             */
-/*   Updated: 2021/11/14 16:47:48 by lenzo-pe         ###   ########.fr       */
+/*   Updated: 2022/03/03 12:35:48 by lenzo-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define PUSH_SWAP_H
 
 # include <stdio.h>
-# include <libft.h>
 # include <libqueue.h>
+# include "utils.h"
+# include <limits.h>
 
 int		swap(t_node **lst);
 int		rotate(t_node **lst);
